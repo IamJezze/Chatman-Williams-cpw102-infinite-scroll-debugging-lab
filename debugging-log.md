@@ -18,6 +18,8 @@ Nov 4th 2026 @ 1402 - Added message to ask user to enter valid input, still move
 
 Nov 4th 2026 @ 1420 - Added check for if all posts have been displayed
 
+Nov 4th 2026 @ 1429 - Added loop to scroll question to repeat until a valid answer is given
+
 ## Resolution
 
 Explain the causes, your repairs, and the evidence that verifies them. Identify
