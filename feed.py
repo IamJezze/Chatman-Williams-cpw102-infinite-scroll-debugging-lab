@@ -37,7 +37,8 @@ while True:
 
     if action == "n":
         break
-
-    page = 0
+    elif action == "y":
+     
+     page += 1
 
 print("Session ended.")
