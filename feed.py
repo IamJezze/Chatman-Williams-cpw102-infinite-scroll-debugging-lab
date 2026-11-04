@@ -17,11 +17,23 @@ def fetch_page(page):
     end = start + PAGE_SIZE
     return posts[start:end]
 
+def is_valid(action):
+    if (action.strip().lower() == "y" 
+        or action.strip().lower() == "n"):
+        return True
+    else:
+        return False
+
 
 page = 0
 feed = []
 
 while True:
+
+    if (len(feed) >= len(posts)):
+        print("\nNo more posts.")
+        break
+
     new_posts = fetch_page(page)
 
     for post in new_posts:
@@ -33,11 +45,14 @@ while True:
 
     print(f"\nLoaded {len(feed)} posts")
 
-    action = input("\nScroll? (y/n): ")
-
+    while not is_valid(action := input("\nScroll? (y/n): ")):
+        print("Please enter y or n.")
+    
     if action == "n":
         break
+    elif action.strip().lower() == "y":
+        page += 1
+        
 
-    page = 0
 
 print("Session ended.")
