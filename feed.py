@@ -22,6 +22,11 @@ page = 0
 feed = []
 
 while True:
+
+    if (len(feed) >= len(posts)):
+        print("\nNo more posts.")
+        break
+
     new_posts = fetch_page(page)
 
     for post in new_posts:
@@ -37,8 +42,10 @@ while True:
 
     if action == "n":
         break
-    elif action == "y":
-     
-     page += 1
+    elif action.strip().lower() == "y":
+        page += 1
+    else:
+        print("Please enter y or n.")
+
 
 print("Session ended.")
